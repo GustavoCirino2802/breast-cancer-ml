@@ -1,0 +1,28 @@
+{
+  "nome_modelo": "Árvore de Decisão",
+  "hiperparametros": {
+    "criterion": "gini",
+    "max_depth": 2,
+    "min_samples_leaf": 1
+  },
+  "acuracia_cv": 0.7722661396574438,
+  "desvio_cv": 0.05560747277742576,
+  "acuracia_teste": 0.7068965517241379,
+  "atributos": [
+    "age",
+    "menopause",
+    "tumor-size",
+    "inv-nodes",
+    "node-caps",
+    "deg-malig",
+    "breast",
+    "breast-quad",
+    "irradiat"
+  ],
+  "classes": {
+    "0": "no-recurrence-events",
+    "1": "recurrence-events"
+  },
+  "versao_sklearn": "1.9.1",
+  "treinado_em": "2026-11-18 17:50:14"
+}
