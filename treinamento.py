@@ -17,10 +17,14 @@ Uso:
 """
 import argparse
 import json
+import os
 import sys
 import time
 import warnings
 from pathlib import Path
+
+# Silencia avisos também nos processos paralelos do joblib (necessário no Windows)
+os.environ.setdefault("PYTHONWARNINGS", "ignore")
 
 import joblib
 import numpy as np
@@ -84,7 +88,7 @@ def candidatos():
             "modelo__C": [0.1, 1, 10],
             "modelo__gamma": ["scale", 0.01, 0.1],
         }),
-        "Random Forest": (RandomForestClassifier(random_state=SEMENTE, n_jobs=-1), {
+        "Random Forest": (RandomForestClassifier(random_state=SEMENTE), {
             "modelo__n_estimators": [100, 300],
             "modelo__max_depth": [3, 5, None],
             "modelo__min_samples_leaf": [1, 5],
